@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xxM-Vj-G9c">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Download Demo Controller-->
+        <scene sceneID="oBm-qa-l2X">
+            <objects>
+                <viewController id="xxM-Vj-G9c" customClass="DownloadDemoController" customModule="StudyDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Oe3-0U-7gw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前进度为：0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SFp-8a-bCm">
+                                <rect key="frame" x="62" y="128" width="128" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="NhU-fp-S5V"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iah-9p-FfL">
+                                <rect key="frame" x="145" y="179" width="124" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="开始、继续下载"/>
+                                <connections>
+                                    <action selector="startDownload:" destination="xxM-Vj-G9c" eventType="touchUpInside" id="sOf-IS-pLE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4uv-GK-Cqc">
+                                <rect key="frame" x="166" y="230" width="82" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="暂停下载"/>
+                                <connections>
+                                    <action selector="pauseDownload:" destination="xxM-Vj-G9c" eventType="touchUpInside" id="OGh-x2-sKs"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AwF-XU-RWn">
+                                <rect key="frame" x="210" y="136.5" width="154" height="4"/>
+                            </progressView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JDm-n1-qpY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SFp-8a-bCm" firstAttribute="top" secondItem="JDm-n1-qpY" secondAttribute="top" constant="84" id="Fkk-az-Tp3"/>
+                            <constraint firstItem="AwF-XU-RWn" firstAttribute="leading" secondItem="SFp-8a-bCm" secondAttribute="trailing" constant="20" id="Jt1-EG-JED"/>
+                            <constraint firstItem="iah-9p-FfL" firstAttribute="centerX" secondItem="Oe3-0U-7gw" secondAttribute="centerX" id="V5d-ZZ-3aZ"/>
+                            <constraint firstItem="AwF-XU-RWn" firstAttribute="centerY" secondItem="SFp-8a-bCm" secondAttribute="centerY" id="gkU-H3-yZn"/>
+                            <constraint firstItem="JDm-n1-qpY" firstAttribute="trailing" secondItem="AwF-XU-RWn" secondAttribute="trailing" constant="50" id="hPA-PO-8L3"/>
+                            <constraint firstItem="4uv-GK-Cqc" firstAttribute="centerX" secondItem="Oe3-0U-7gw" secondAttribute="centerX" id="l31-BW-uwZ"/>
+                            <constraint firstItem="iah-9p-FfL" firstAttribute="top" secondItem="SFp-8a-bCm" secondAttribute="bottom" constant="30" id="mRX-cb-ZHc"/>
+                            <constraint firstItem="SFp-8a-bCm" firstAttribute="leading" secondItem="JDm-n1-qpY" secondAttribute="leading" constant="62" id="oJh-9G-GIs"/>
+                            <constraint firstItem="4uv-GK-Cqc" firstAttribute="top" secondItem="iah-9p-FfL" secondAttribute="bottom" constant="20" id="wD2-gw-U8o"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="L0B-ld-R8V"/>
+                    <connections>
+                        <outlet property="currentProgressLbl" destination="SFp-8a-bCm" id="uDW-I3-QXl"/>
+                        <outlet property="pauseDownload" destination="4uv-GK-Cqc" id="NOf-iW-jBx"/>
+                        <outlet property="progressView" destination="AwF-XU-RWn" id="3tl-PW-Ass"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="opi-PL-PwA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="201" y="69"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
